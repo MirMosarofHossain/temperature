@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .heading{
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(238, 173, 127);
+            margin-bottom: 10px;
+        }
+        .container{
+            height: 150px;
+            width: 600px;
+            background-color: aqua;
+            display: grid;
+            row-gap: 5px;
+            column-gap: 5px;
+            grid-template-columns: auto 30px auto;
+            grid-template-rows: 60px 100px;
+            margin: auto;
+           
+            padding: 15px 15px;
+            
+        }
+
+        .equ{
+            
+            text-align: center;
+            
+        }
+
+        .nav{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav select{
+            font-size: 1.1rem;
+        }
+        .top-in{
+            height: 30px;
+            width: 100%;
+        }
+
+        .block{
+            display: block;
+            height: 30px;
+           width: 100%;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <H1>Temperature converter</H1>
+    </div>
+    
+   <!-- converter container -->
+   <div class="container">
+
+    <!-- top section -->   
+    <div class="nav">
+        <select name="temp" class="top-in" id="temp">
+        <option value="Temperature">Temperature</option>
+    </select>
+    </div> 
+    
+    <!-- celsius secton -->
+    <div class="same">
+        <input id="cel" type="number" value="0" class="block">
+        <label for="cel" class="block">celsius</label>    
+    </div>
+
+     <!-- equal secton -->
+    <div class="same equ"><h1>=</h1></div>
+
+     <!-- Fahrenheit secton -->  
+    <div class="same">
+        <input id="farh" value="32" type="number" class="block">
+        <label for="farh" class="block">Fahrenheit</label>
+    </div>
+   
+   </div>
+
+   <script>
+
+    let cel=document.getElementById("cel");
+    let farh= document.getElementById("farh");
+
+    cel.addEventListener('input',function(){
+        let c=this.value;
+        let f = (c*9/5)+32;
+        if(!Number.isInteger(f)){
+            f=f.toFixed(4);
+        }
+        farh.value=f;
+    });
+
+    farh.addEventListener('input',function(){
+        let f=this.value;
+      
+        let c=(f-32)*5/9;
+        if(!Number.isInteger(c)){
+           c= c.toFixed(4);
+        }
+        cel.value=c;
+    });
+
+   </script>
+</body>
+</html>
