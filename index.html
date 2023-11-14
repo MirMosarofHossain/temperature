@@ -4,69 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature converter</title>
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-        .heading{
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(238, 173, 127);
-            margin-bottom: 10px;
-        }
-        .container{
-            height: 150px;
-            width: 600px;
-            background-color: aqua;
-            display: grid;
-            row-gap: 5px;
-            column-gap: 5px;
-            grid-template-columns: auto 30px auto;
-            grid-template-rows: 60px 100px;
-            margin: auto;
-           
-            padding: 15px 15px;
-            
-        }
-
-        .equ{
-            
-            text-align: center;
-            
-        }
-
-        .nav{
-            grid-column-start: 1;
-            grid-column-end: 4;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav select{
-            font-size: 1.1rem;
-        }
-        .top-in{
-            height: 30px;
-            width: 100%;
-        }
-
-        .block{
-            display: block;
-            height: 30px;
-           width: 100%;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-        }
-    </style>
 </head>
 <body>
     <div class="heading">
-        <H1>Temperature converter</H1>
+        <h1>Temperature Converter</h1>
     </div>
     
    <!-- converter container -->
@@ -96,7 +39,9 @@
    
    </div>
 
-   <script>
+   <script src="script.js"></script>
+
+   <!-- <script>
 
     let cel=document.getElementById("cel");
     let farh= document.getElementById("farh");
@@ -120,6 +65,6 @@
         cel.value=c;
     });
 
-   </script>
+   </script> -->
 </body>
 </html>
